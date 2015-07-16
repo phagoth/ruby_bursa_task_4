@@ -41,6 +41,5 @@ module Library
     def comments
       @comments
     end
-
   end
 end

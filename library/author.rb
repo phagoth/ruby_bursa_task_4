@@ -1,12 +1,14 @@
-# Author class
-class Library::Author
-  include Library::Commentable
+module Library
+  # Author class
+  class Author
+    include Library::Commentable
 
-  attr_accessor :year_of_birth, :year_of_death, :name
+    attr_accessor :year_of_birth, :year_of_death, :name
 
-  def initialize(year_of_birth, year_of_death, name)
-    @year_of_birth = year_of_birth
-    @year_of_death = year_of_death
-    @name = name
+    def initialize(year_of_birth, year_of_death, name)
+      @year_of_birth = year_of_birth
+      @year_of_death = year_of_death
+      @name = name
+    end
   end
 end
