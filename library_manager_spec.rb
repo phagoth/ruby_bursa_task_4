@@ -1,31 +1,28 @@
 require './library/library.rb'
 
 describe Library::Book do
-  let!(:book){Library::Book.new "", ""}
+  let!(:book) { Library::Book.new '', '' }
 
   it 'should be commentable' do
-    book.add_comment "The comment"
+    book.add_comment 'The comment'
     expect(Library::Book.comments_quantity).to eq 1
     expect(Library::Commentable.total_comments_quantity).to eq 1
     expect(book.comments.count).to eq 1
   end
-
 end
 
 describe Library::Author do
-  let!(:author){Library::Author.new "", 0, 0}
+  let!(:author) { Library::Author.new '', 0, 0 }
 
   it 'should be commentable' do
-    author.add_comment "The comment"
+    author.add_comment 'The comment'
     expect(Library::Author.comments_quantity).to eq 1
     expect(Library::Commentable.total_comments_quantity).to eq 2
     expect(author.comments.count).to eq 1
   end
-
 end
 
 describe Library::Manager do
-
 #   let(:leo_tolstoy) { Library::Author.new(1828, 1910, 'Leo Tolstoy' ) }
 #   let!(:oscar_wilde) { Library::Author.new(1854, 1900, 'Oscar Wilde') }
 #   let!(:war_and_peace) { Library::PublishedBook.new(leo_tolstoy, 'War and Peace', 1400, 3280, 1996) }
@@ -66,5 +63,4 @@ describe Library::Manager do
 # The most popular book is "The Well-Grounded Rubyist" authored by David A. Black: it had been read for 123.0 hours by 5 readers.
 # TEXT
 #   end
-  
 end

@@ -1,7 +1,8 @@
+# ReaderWithBook class
 class Library::ReaderWithBook
   attr_accessor :amazing_book, :current_page, :reader, :return_date
 
-  def initialize  amazing_book, reader, current_page = 0, return_date = (Time.now + 2.weeks)
+  def initialize(amazing_book, reader, current_page = 0, return_date = (Time.now + 2.weeks))
     @amazing_book = amazing_book
     @reader = reader
     @return_date = return_date
@@ -25,15 +26,11 @@ class Library::ReaderWithBook
   end
 
   def days_to_buy
-
   end
 
-  def read_the_book! duration
-
+  def read_the_book!(duration)
   end
 
   def penalty_to_finish
-
   end
-
 end

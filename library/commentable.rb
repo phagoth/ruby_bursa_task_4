@@ -1,6 +1,6 @@
 module Library
+  # Module that allow items be commentale
   module Commentable
-
     @@total_comments_counter = 0
 
     def self.included(base)
@@ -9,22 +9,22 @@ module Library
       base.send :class_variable_set, :@@comments_counter, 0
     end
 
+    # Module for class method
     module ClassMethods
-
       def comments_quantity
         self.class_variable_get :@@comments_counter
       end
 
-      def inc_comment_or_init increment
+      def inc_comment_or_init(increment)
         self.class_variable_set :@@comments_counter, self.class_variable_get(:@@comments_counter) + increment
       end
-
     end
 
+    # Module for initialization
     module Initializer
-      def initialize *args
+      def initialize(*args)
         @comments = []
-        super *args
+        super(*args)
       end
     end
 
@@ -32,7 +32,7 @@ module Library
       @@total_comments_counter
     end
 
-    def add_comment comment = ""
+    def add_comment(comment = '')
       self.class.inc_comment_or_init 1
       @@total_comments_counter += 1
       @comments << comment
