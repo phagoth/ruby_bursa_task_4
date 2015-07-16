@@ -21,8 +21,8 @@ module Library
     # Module for initialization
     module Initializer
       def initialize(*args)
-        @identifier = self.class.inc_identifier_or_init
         super(*args)
+        @identifier = self.class.inc_identifier_or_init
       end
     end
 
@@ -30,12 +30,17 @@ module Library
       @identifier
     end
 
+    def identifier_comparsion(first_item, second_item)
+      first_item.class == second_item.class &&
+        first_item.identifier == second_item.identifier
+    end
+
     def eql?(other)
-      @identifier === other.identifier
+      identifier_comparsion(self, other)
     end
 
     def ==(other)
-      @identifier === other.identifier
+      identifier_comparsion(self, other)
     end
   end
 end

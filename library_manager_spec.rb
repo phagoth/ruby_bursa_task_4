@@ -50,7 +50,7 @@ describe Library::Reader do
   let!(:reader5) { Library::Reader.new '', '' }
 
   it 'should return good id of object' do
-    expect(reader4.identifier).to eq 9
+    expect(reader4.identifier).to eq 4
     expect(Library::Reader.group_identifier).to eq 5
     expect(reader4.eql?(reader5)).to eq false
     expect(reader2.eql?(reader2)).to eq true
