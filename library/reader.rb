@@ -1,6 +1,8 @@
 module Library
   # Reader class
   class Reader
+    include Library::Commentable
+    include Library::Identifier
     attr_accessor :name, :reading_speed
 
     def initialize(name, reading_speed)

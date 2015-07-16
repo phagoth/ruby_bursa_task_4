@@ -1,6 +1,7 @@
 module Library
   # ReaderWithBook class
   class ReaderWithBook
+    include Library::Commentable
     attr_accessor :amazing_book, :current_page, :reader, :return_date
 
     def initialize(amazing_book, reader, current_page = 0, return_date = (Time.now + 2.weeks))

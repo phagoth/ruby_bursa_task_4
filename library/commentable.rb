@@ -4,19 +4,19 @@ module Library
     @@total_comments_counter = 0
 
     def self.included(base)
-      base.send :extend, ClassMethods
-      base.send :prepend, Initializer
-      base.send :class_variable_set, :@@comments_counter, 0
+      base.send(:extend, ClassMethods)
+      base.send(:prepend, Initializer)
+      base.send(:class_variable_set, :@@comments_counter, 0)
     end
 
     # Module for class method
     module ClassMethods
       def comments_quantity
-        self.class_variable_get :@@comments_counter
+        self.class_variable_get(:@@comments_counter)
       end
 
       def inc_comment_or_init(increment)
-        self.class_variable_set :@@comments_counter, self.class_variable_get(:@@comments_counter) + increment
+        self.class_variable_set(:@@comments_counter, self.class_variable_get(:@@comments_counter) + increment)
       end
     end
 

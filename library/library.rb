@@ -6,6 +6,7 @@ module Library
 end
 
 require_relative 'commentable.rb'
+require_relative 'identifier.rb'
 require_relative 'author.rb'
 require_relative 'book.rb'
 require_relative 'published_book.rb'
